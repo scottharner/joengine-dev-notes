@@ -15,8 +15,7 @@
 - What is the difference between jo_sprite_draw3D and jo_sprite_draw3D2?
   - The first one uses center aligned coordinates and the second one uses top left coordinates.
 - Why can the Saturn not find my TGA file?
-  -  It appears that TGA names might have to be 8 characters or fewer.
-  -    
+  -  It appears that TGA names might have to be 8 characters or fewer. 
 
 ## Builds
 
