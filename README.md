@@ -15,8 +15,25 @@
 - What is the difference between jo_sprite_draw3D and jo_sprite_draw3D2?
   - The first one uses center aligned coordinates and the second one uses top left coordinates.
 - Why can the Saturn not find my TGA file?
-  -  It appears that TGA names might have to be 8 characters or fewer. 
+  -  It appears that TGA names might have to be 8 characters or fewer.
+- Why does my sprite have a scrambled or garbage appearance within the game?
+  - Make certain that the dimensions are evenly divisible by 8.
+- Why do my sprites take so long to load?
+  - Part of this can be the slow speed of changing directories.
+    - One approach is to change directories once, load all the sprites, and then change back to the original directory.
+    - Another approach is to store all of the sprites in the root folder so that you do not have to change directories.
+  - It can also help if you combine a number of sprites into a single file and load using jo_sprite_add_tga_tileset.
+ 
+## Fonts
 
+- Why are my font characters appearing with each character being only one pixel?
+  - Your file name might be longer than 8 characters.
+- How is the spacing parameter used when loading a font?
+  - This determines how much spacing is displayed between each character.
+- Why does my font appear distorted when I print with a function like jo_font_print_centered?
+  - There is a known bug whereby you see distortion when providing a scaling parameter of 1.0f.
+  - Try using 0.99f instead.
+    
 ## Builds
 
 - What does JO_COMPILE_USING_SGL do?
@@ -51,6 +68,12 @@
   - It is possible but not recommended.
   - Subfolder usage requires calling sbl functions, which is slow.
 
+## Input
+
+- Why can my game not detect the 2nd controller?
+  - jo_is_pad2_available does not look at the 1st controller on the 2nd port.
+  - You need to instead use jo_is_input_available(6).
+    
 ## Documentation
 
 - Are there any documentation sources other than the official Jo Engine website?
