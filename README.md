@@ -23,6 +23,10 @@
     - One approach is to change directories once, load all the sprites, and then change back to the original directory.
     - Another approach is to store all of the sprites in the root folder so that you do not have to change directories.
   - It can also help if you combine a number of sprites into a single file and load using jo_sprite_add_tga_tileset.
+- How can I fade in a screen from black to full color?
+  - Use jo_set_screen_color_filter_a.
+  - You need to use a loop that will cycle the values from -255 (black) to 0 (full color).
+  - You would cycle the values in reverse if fading out.
  
 ## Fonts
 
@@ -39,6 +43,13 @@
 - What does JO_COMPILE_USING_SGL do?
   - This makes Jo Engine be a wrapper around SGL.
   - If you disable this, it puts Jo engine into an experimental mode that may be buggy.
+- How do I convert my ISO/WAV/CUE files to BIN/CUE for distribution?
+  - You can load your cue file into [sega saturn patcher](https://segaxtreme.net/resources/sega-saturn-patcher.73/) and select Build Image.
+  - If you have problems with your CD audio, you may need to use shntool to fix the files.
+    - Run [shntool](https://segaxtreme.net/resources/shntool.109/) to attempt to fix the wav files.
+      - The command is "shntool fix *.wav".
+    - I had some files that it said were not CD quality.
+    - I recreated them but you might also be able to export them as signed 16-bit pcm in [Audacity](https://www.audacityteam.org/).
 
 ## Sound
 
